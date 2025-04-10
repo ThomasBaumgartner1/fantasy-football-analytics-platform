@@ -3,10 +3,10 @@ name: CI/CD Pipeline for Fantasy Football Analytics Platform
 on:
   push:
     branches:
-      - main
+      - latest_branch
   pull_request:
     branches:
-      - main
+      - latest_branch
 
 jobs:
   build:
