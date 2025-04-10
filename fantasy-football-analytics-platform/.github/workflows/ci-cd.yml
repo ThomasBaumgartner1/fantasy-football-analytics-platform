@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - latest_branch
+      - main
   pull_request:
     branches:
       - latest_branch
+      - main
 
 jobs:
   build:
@@ -47,3 +49,6 @@ jobs:
         run: |
           # You can add your deployment steps here (e.g., ECS, Fargate, etc.)
           # Example: Deploy to ECS or any other AWS service
+      - name: Run ETL Pipeline
+        run: |
+          python src/etl/transform_fpl_data.py
